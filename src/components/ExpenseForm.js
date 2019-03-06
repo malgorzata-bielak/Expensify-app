@@ -2,11 +2,6 @@ import React from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
 
-// const date = new Date()
-// const now = moment();
-// console.log(now.format("MMM Do, YYYY"));
-
-// use local component state to track the changes to all of the inputs and when form will be submitted we will send them to redux to edit/create expense
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);

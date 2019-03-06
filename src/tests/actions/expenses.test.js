@@ -1,8 +1,5 @@
 import { addExpense, editExpense, removeExpense } from "../../actions/expenses";
 
-// .toEqual with objects, arrays
-// .toBe with booleans, numbers and strings
-
 test("should setup remove expense action object", () => {
   const action = removeExpense({ id: "123abc" });
   expect(action).toEqual({

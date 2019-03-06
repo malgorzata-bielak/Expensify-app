@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import ExpenseListItem from "./ExpenseListItem";
 import selectExpenses from "../selectors/selectExpenses";
 
-// presententional component
 export const ExpenseList = props => {
   return (
     <div>
@@ -24,5 +23,4 @@ const mapStateToProps = state => {
   };
 };
 
-// HOC
 export default connect(mapStateToProps)(ExpenseList);

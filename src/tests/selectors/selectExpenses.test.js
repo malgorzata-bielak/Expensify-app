@@ -35,7 +35,7 @@ test("should filter by endDate", () => {
   expect(result).toEqual([expenses[0], expenses[1]]);
 });
 
-test("should y", () => {
+test("should sort by date", () => {
   const filters = {
     text: "",
     sortBy: "date",
@@ -46,7 +46,7 @@ test("should y", () => {
   expect(result).toEqual([expenses[2], expenses[0], expenses[1]]);
 });
 
-test("should z", () => {
+test("should sort by amount", () => {
   const filters = {
     text: "",
     sortBy: "amount",

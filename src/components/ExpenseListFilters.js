@@ -68,4 +68,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(ExpenseListFilters);
-// access to state + dispatch
