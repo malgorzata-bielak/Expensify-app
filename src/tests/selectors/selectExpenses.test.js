@@ -1,5 +1,5 @@
-import selectExpenses from "../../selectors/selectExpenses";
 import moment from "moment";
+import selectExpenses from "../../selectors/selectExpenses";
 import expenses from "../fixtures/expenses";
 
 test("should filter by text value", () => {
