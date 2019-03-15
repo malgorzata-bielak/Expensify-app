@@ -1,8 +1,13 @@
 import React from "react";
 import moment from "moment";
+import PropTypes from "prop-types";
 import { SingleDatePicker } from "react-dates";
 
 export default class ExpenseForm extends React.Component {
+  static defaultProps = {
+    expense: undefined,
+  };
+
   constructor(props) {
     super(props);
 
@@ -101,3 +106,14 @@ export default class ExpenseForm extends React.Component {
     );
   }
 }
+
+ExpenseForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  expense: PropTypes.shape({
+    id: PropTypes.string,
+    description: PropTypes.string,
+    note: PropTypes.string,
+    amount: PropTypes.number,
+    createdAt: PropTypes.number,
+  }),
+};

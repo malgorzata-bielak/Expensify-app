@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { startLogin } from "../actions/auth";
 
 export const LoginPage = ({ startLoginAction }) => (
@@ -17,6 +18,10 @@ export const LoginPage = ({ startLoginAction }) => (
 const mapDispatchToProps = dispatch => ({
   startLoginAction: () => dispatch(startLogin()),
 });
+
+LoginPage.propTypes = {
+  startLoginAction: PropTypes.func.isRequired,
+};
 
 export default connect(
   undefined,

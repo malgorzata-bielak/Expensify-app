@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { DateRangePicker } from "react-dates";
+import PropTypes from "prop-types";
 import {
   setEndDate,
   setStartDate,
@@ -87,6 +88,20 @@ const mapDispatchToProps = dispatch => ({
   setStartDate: startDate => dispatch(setStartDate(startDate)),
   setEndDate: endDate => dispatch(setEndDate(endDate)),
 });
+
+ExpenseListFilters.propTypes = {
+  filters: PropTypes.shape({
+    text: PropTypes.string,
+    sortBy: PropTypes.oneOf(["amount", "date"]),
+    startDate: PropTypes.object,
+    endDate: PropTypes.object,
+  }).isRequired,
+  setStartDate: PropTypes.func.isRequired,
+  setEndDate: PropTypes.func.isRequired,
+  setTextFilter: PropTypes.func.isRequired,
+  sortByDate: PropTypes.func.isRequired,
+  sortByAmount: PropTypes.func.isRequired,
+};
 
 export default connect(
   mapStateToProps,
