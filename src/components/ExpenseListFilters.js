@@ -1,11 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { DateRangePicker } from "react-dates";
-import { setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "../actions/filters";
+import {
+  setEndDate,
+  setStartDate,
+  setTextFilter,
+  sortByAmount,
+  sortByDate,
+} from "../actions/filters";
 
 export class ExpenseListFilters extends React.Component {
   state = {
-    calendarFocused: null
+    calendarFocused: null,
   };
 
   onDatesChange = ({ startDate, endDate }) => {
@@ -43,7 +49,11 @@ export class ExpenseListFilters extends React.Component {
             />
           </div>
           <div className="input-group__item">
-            <select className="select" value={this.props.filters.sortBy} onChange={this.onSortChange}>
+            <select
+              className="select"
+              value={this.props.filters.sortBy}
+              onChange={this.onSortChange}
+            >
               <option value="date">Date</option>
               <option value="amount">Amount</option>
             </select>
@@ -55,7 +65,7 @@ export class ExpenseListFilters extends React.Component {
               onDatesChange={this.onDatesChange}
               focusedInput={this.state.calendarFocused}
               onFocusChange={this.onFocusChange}
-              showClearDates={true}
+              showClearDates
               numberOfMonths={1}
               isOutsideRange={() => false}
             />
@@ -67,7 +77,7 @@ export class ExpenseListFilters extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  filters: state.filters
+  filters: state.filters,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -75,10 +85,10 @@ const mapDispatchToProps = dispatch => ({
   sortByDate: () => dispatch(sortByDate()),
   sortByAmount: () => dispatch(sortByAmount()),
   setStartDate: startDate => dispatch(setStartDate(startDate)),
-  setEndDate: endDate => dispatch(setEndDate(endDate))
+  setEndDate: endDate => dispatch(setEndDate(endDate)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ExpenseListFilters);

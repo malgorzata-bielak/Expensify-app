@@ -2,7 +2,7 @@ const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve({
       name: "Andrew",
-      age: 26
+      age: 26,
     });
     // reject("Something went wrong");
   }, 1500);

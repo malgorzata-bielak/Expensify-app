@@ -7,7 +7,7 @@ test("should setup default filter values", () => {
     text: "",
     sortBy: "date",
     startDate: moment().startOf("month"),
-    endDate: moment().endOf("month")
+    endDate: moment().endOf("month"),
   });
 });
 
@@ -21,7 +21,7 @@ test("should set sortBy to date", () => {
     text: "",
     startDate: undefined,
     endDate: undefined,
-    sortBy: "amount"
+    sortBy: "amount",
   };
   const action = { type: "SORT_BY_DATE" };
   const state = filtersReducer(currentState, action);
@@ -37,7 +37,7 @@ test("should set startDate filter", () => {
   const startDate = moment();
   const state = filtersReducer(undefined, {
     type: "SET_START_DATE",
-    startDate
+    startDate,
   });
   expect(state.startDate).toEqual(startDate);
 });
@@ -46,7 +46,7 @@ test("should set endDate filter", () => {
   const endDate = moment();
   const state = filtersReducer(undefined, {
     type: "SET_END_DATE",
-    endDate
+    endDate,
   });
   expect(state.endDate).toEqual(endDate);
 });

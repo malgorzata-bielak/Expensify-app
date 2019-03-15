@@ -3,7 +3,9 @@ import { shallow } from "enzyme";
 import { AddExpensePage } from "../../components/AddExpensePage";
 import expenses from "../fixtures/expenses";
 
-let history, startAddExpense, wrapper;
+let history;
+let startAddExpense;
+let wrapper;
 
 beforeEach(() => {
   startAddExpense = jest.fn();

@@ -4,7 +4,12 @@ import moment from "moment";
 import { ExpenseListFilters } from "../../components/ExpenseListFilters";
 import { filters, altFilters } from "../fixtures/filters";
 
-let setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate, wrapper;
+let setEndDate;
+let setStartDate;
+let setTextFilter;
+let sortByAmount;
+let sortByDate;
+let wrapper;
 
 beforeEach(() => {
   setTextFilter = jest.fn();
@@ -20,7 +25,7 @@ beforeEach(() => {
       sortByDate={sortByDate}
       setStartDate={setStartDate}
       setEndDate={setEndDate}
-    />
+    />,
   );
 });
 
@@ -30,7 +35,7 @@ test("should render ExpenseListFilters correctly", () => {
 
 test("should render ExpenseListFilters with alt data correctly", () => {
   wrapper.setProps({
-    filters: altFilters
+    filters: altFilters,
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -38,7 +43,7 @@ test("should render ExpenseListFilters with alt data correctly", () => {
 test("should handle text change", () => {
   const value = "rent";
   wrapper.find("input").simulate("change", {
-    target: { value }
+    target: { value },
   });
 
   expect(setTextFilter).toHaveBeenLastCalledWith(value);
@@ -47,10 +52,10 @@ test("should handle text change", () => {
 test("should sort by date", () => {
   const value = "date";
   wrapper.setProps({
-    filters: altFilters
+    filters: altFilters,
   });
   wrapper.find("select").simulate("change", {
-    target: { value }
+    target: { value },
   });
   expect(sortByDate).toHaveBeenCalled();
 });
@@ -58,7 +63,7 @@ test("should sort by date", () => {
 test("should sort by amount", () => {
   const value = "amount";
   wrapper.find("select").simulate("change", {
-    target: { value }
+    target: { value },
   });
   expect(sortByAmount).toHaveBeenCalled();
 });

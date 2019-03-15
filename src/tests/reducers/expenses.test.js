@@ -9,7 +9,7 @@ test("should set default state", () => {
 test("should remove expense by id", () => {
   const action = {
     type: "REMOVE_EXPENSE",
-    id: expenses[1].id
+    id: expenses[1].id,
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual([expenses[0], expenses[2]]);
@@ -18,7 +18,7 @@ test("should remove expense by id", () => {
 test("should remove expense by id", () => {
   const action = {
     type: "REMOVE_EXPENSE",
-    id: expenses[1].id
+    id: expenses[1].id,
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual([expenses[0], expenses[2]]);
@@ -27,7 +27,7 @@ test("should remove expense by id", () => {
 test("should not remove expense if id not found", () => {
   const action = {
     type: "REMOVE_EXPENSE",
-    id: "-1"
+    id: "-1",
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
@@ -39,11 +39,11 @@ test("should add an expense", () => {
     description: "My new expense",
     note: "note",
     amount: 3000,
-    createdAt: undefined
+    createdAt: undefined,
   };
   const action = {
     type: "ADD_EXPENSE",
-    expense
+    expense,
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual([...expenses, expense]);
@@ -54,8 +54,8 @@ test("should edit an expense", () => {
     type: "EDIT_EXPENSE",
     id: expenses[1].id,
     updates: {
-      note: "updated expense"
-    }
+      note: "updated expense",
+    },
   };
   const state = expensesReducer(expenses, action);
   expect(state[1].note).toEqual(action.updates.note);
@@ -66,8 +66,8 @@ test("should not edit an expense if one not found", () => {
     type: "EDIT_EXPENSE",
     id: "-1",
     updates: {
-      note: "updated expense"
-    }
+      note: "updated expense",
+    },
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
@@ -76,7 +76,7 @@ test("should not edit an expense if one not found", () => {
 test("should set expenses", () => {
   const action = {
     type: "SET_EXPENSES",
-    expenses: [expenses[1]]
+    expenses: [expenses[1]],
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual([expenses[1]]);

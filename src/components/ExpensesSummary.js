@@ -13,8 +13,8 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
     <div className="page-header">
       <div className="content-container">
         <h1 className="page-header__title">
-          Viewing <span>{expenseCount}</span> {expenseWord} totalling{" "}
-          <span>{formattedExpensesTotal}</span>
+          Viewing
+          <span>{expenseCount}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span>
           <div className="page-header__actions">
             <Link className="button" to="/create">
               Add Expense
@@ -31,7 +31,7 @@ const mapStateToProps = state => {
 
   return {
     expenseCount: visibleExpenses.length,
-    expensesTotal: selectExpensesTotal(visibleExpenses)
+    expensesTotal: selectExpensesTotal(visibleExpenses),
   };
 };
 

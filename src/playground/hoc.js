@@ -11,7 +11,11 @@ import ReactDOM from "react-dom";
 const Info = props => (
   <div>
     <h1>Info</h1>
-    <p>The info is: {props.info}</p>
+    <p>
+
+      The info is:
+{props.info}
+    </p>
   </div>
 );
 
@@ -25,7 +29,7 @@ const withAdminWarning = WrappedComponent => {
   );
 };
 
-//ho component
+// ho component
 // const AdminInfo = withAdminWarning(Info);
 
 const requireAuthentification = WrappedComponent => {
@@ -44,6 +48,6 @@ const AuthInfo = requireAuthentification(Info);
 // );
 
 ReactDOM.render(
-  <AuthInfo isAuthenticated={true} info="There are the details" />,
-  document.getElementById("app")
+  <AuthInfo isAuthenticated info="There are the details" />,
+  document.getElementById("app"),
 );

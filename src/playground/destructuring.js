@@ -7,8 +7,8 @@ const person = {
   age: 26,
   location: {
     city: "Philadelphia",
-    temp: 92
-  }
+    temp: 92,
+  },
 };
 
 const { name: firstName = "Anonymous", age } = person;
@@ -25,15 +25,15 @@ const book = {
   title: "Ego is the Enemy",
   author: "Ryan Holiday",
   publisher: {
-    name: "Penguin"
-  }
+    name: "Penguin",
+  },
 };
 
 const { name: publisherName = "Self-Published" } = book.publisher;
 
 console.log(publisherName);
 
-//////////////////////////
+// ////////////////////////
 // ARRAY DESTRUCTURING
 // - we can set defaults
 const address = ["1299 S Juniper Street", "Philadelphia", "Pennsylvania", "19147"];
@@ -50,7 +50,7 @@ const [drink, , cost] = item;
 
 console.log(`A medium ${drink} costs ${cost}.`);
 
-//we can destructure objects and function arguments
+// we can destructure objects and function arguments
 
 // 1 - no destructuring
 const add = data => {
@@ -76,17 +76,17 @@ add(); //
 
 //
 const add = ({ a, b }, c) => {
-  return a + b + c; //113
+  return a + b + c; // 113
 };
 
 add({ a: 1, b: 12 }, 100);
 
 const user = {
   name: "Jen",
-  age: 24
+  age: 24,
 };
 
 console.log({
   ...user,
-  name: Lucy
+  name: Lucy,
 });
